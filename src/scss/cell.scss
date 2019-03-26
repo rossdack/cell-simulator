@@ -1,0 +1,14 @@
+.cell {
+  width: 15px;
+  height: 15px;
+  border: 1px solid lightgrey;
+  //margin: 1px;
+
+  &.-true {
+    background: white;
+  }
+
+  &.-false {
+    background: black;
+  }
+}
