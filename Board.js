@@ -34,8 +34,10 @@ class Board extends React.Component {
     };
 
     playGame = () => {
-        this.setState({isRunning: !this.state.isRunning});
-        this.doGenerationCycle();
+        if (!this.state.isRunning) {
+            this.setState({isRunning: !this.state.isRunning});
+            this.doGenerationCycle();
+        }
     };
 
     stopGame = () => {
@@ -145,7 +147,7 @@ class Board extends React.Component {
                     {this.renderColumns()}
                 </section>
                 <section className="buttons">
-                    <button title="Play" onClick={this.playGame} enabled={!this.state.isRunning}>Play</button>
+                    <button title="Play" onClick={this.playGame} className={this.state.isRunning && "in-play"}>Play</button>
                     <button title="Reset" onClick={this.resetBoard}>Reset</button>
                     <button title="Stop" onClick={this.stopGame}>Stop</button>
                 </section>

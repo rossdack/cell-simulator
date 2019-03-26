@@ -4,7 +4,8 @@ https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
 ## Available Scripts
 
 In the project directory, you can run:
-
+### `npm install`
+ - install dependencies
 ### `npm start`
  - start the game in the default browser window.
 ### `npm test` 
