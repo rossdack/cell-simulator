@@ -13,4 +13,10 @@ section {
   &.buttons {
     padding-top: 5px;
   }
+
+  .in-play {
+    background: green;
+    color: white;
+    outline: none;
+  }
 }
