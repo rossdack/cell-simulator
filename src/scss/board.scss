@@ -1,0 +1,16 @@
+.row {
+
+}
+
+header {
+  padding: 5px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+
+  &.buttons {
+    padding-top: 5px;
+  }
+}
