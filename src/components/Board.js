@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import Cell from './Cell';
+import Button from './Button';
 
 const XDIMENSION = 20;
 const YDIMENSION = 20;
@@ -25,7 +26,7 @@ class Board extends React.Component {
     }
 
     resetBoard = () => {
-        this.setState({boardArray: this.initializeBoard(), isRunning: false})
+        this.setState({boardArray: this.initializeBoard(), isRunning: false});
 
         if (this.timeout) {
             window.clearTimeout(this.timeout);
@@ -147,9 +148,9 @@ class Board extends React.Component {
                     {this.renderColumns()}
                 </section>
                 <section className="buttons">
-                    <button title="Play" onClick={this.playGame} className={this.state.isRunning && "in-play"}>Play</button>
-                    <button title="Reset" onClick={this.resetBoard}>Reset</button>
-                    <button title="Stop" onClick={this.stopGame}>Stop</button>
+                    <Button title="Play" text="Play" clickHandler={this.playGame} className={this.state.isRunning && "in-play"} />
+                    <Button title="Reset" text="Reset" clickHandler={this.resetBoard} />
+                    <Button title="Stop" text="Stop" title="Stop" clickHandler={this.stopGame} />
                 </section>
             </>
         );
