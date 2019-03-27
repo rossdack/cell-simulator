@@ -5,16 +5,7 @@ const XDIMENSION = 20;
 const YDIMENSION = 20;
 const INTERVAL = 1000;
 
-const NORTH = [-1, 0];
-const NORTHEAST = [-1, 1];
-const EAST = [0, 1];
-const SOUTHEAST = [1, 1];
-const SOUTH = [0, 1];
-const SOUTHWEST = [1, -1];
-const WEST = [1, 0];
-const NORTHWEST = [-1, -1];
-
-const DIRS = [NORTH, NORTHEAST, EAST, SOUTHEAST, SOUTH, SOUTHWEST, WEST, NORTHWEST];
+const DIRS = [[-1, -1], [-1, 0], [-1, 1], [0, 1], [1, 1], [1, 0], [1, -1], [0, -1]];
 
 class Board extends React.Component {
 
@@ -43,8 +34,10 @@ class Board extends React.Component {
     };
 
     playGame = () => {
-        this.setState({isRunning: !this.state.isRunning});
-        this.doGenerationCycle();
+        if (!this.state.isRunning) {
+            this.setState({isRunning: !this.state.isRunning});
+            this.doGenerationCycle();
+        }
     };
 
     stopGame = () => {
@@ -154,7 +147,7 @@ class Board extends React.Component {
                     {this.renderColumns()}
                 </section>
                 <section className="buttons">
-                    <button title="Play" onClick={this.playGame} enabled={!this.state.isRunning}>Play</button>
+                    <button title="Play" onClick={this.playGame} className={this.state.isRunning && "in-play"}>Play</button>
                     <button title="Reset" onClick={this.resetBoard}>Reset</button>
                     <button title="Stop" onClick={this.stopGame}>Stop</button>
                 </section>
