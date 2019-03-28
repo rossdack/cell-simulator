@@ -150,7 +150,7 @@ class Board extends React.Component {
                 <section className="buttons">
                     <Button title="Play" text="Play" clickHandler={this.playGame} className={this.state.isRunning && "in-play"} />
                     <Button title="Reset" text="Reset" clickHandler={this.resetBoard} />
-                    <Button title="Stop" text="Stop" title="Stop" clickHandler={this.stopGame} />
+                    <Button title="Stop" text="Stop" clickHandler={this.stopGame} />
                 </section>
             </>
         );
